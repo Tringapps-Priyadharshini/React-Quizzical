@@ -12,8 +12,8 @@ export default function Quiz(){
     useEffect(()=>{ 
         axios.get(`${REACT_APP_DOMAIN_NAME}/api.php?amount=5`)
         .then(response=>{
-            let data = response.data.results;
-            data.forEach(eachData=>{
+            let dataAPI = response.data.results;
+            dataAPI.forEach(eachData=>{
                 eachData.options = []
                 eachData.incorrect_answers.map(incorrectOption=>{
                     let allOptions = {
@@ -28,11 +28,11 @@ export default function Quiz(){
                 });
                 eachData.options.sort(() => Math.random() - 0.5)
             })
-      console.log(data);
+      console.log(dataAPI);
     
-    setData(data);
+    setData(dataAPI);
     })
-    .catch((error)=>{
+    .catch(()=>{
         setCheckError(true);
     })
     },[])
@@ -87,3 +87,4 @@ export default function Quiz(){
     )
 
 }
+
