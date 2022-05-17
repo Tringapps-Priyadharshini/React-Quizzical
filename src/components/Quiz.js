@@ -1,4 +1,4 @@
-import { Button,Box,Chip,} from '@mui/material'
+import { Button,Box,Chip} from '@mui/material'
 import Result from './Result';
 import axios from 'axios'
 import React, { useState,useEffect } from 'react'
